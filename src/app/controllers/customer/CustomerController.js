@@ -8,6 +8,16 @@ const customerController = {
     const listedCustomers = ListCustomerService.listAll()
     response.json(listedCustomers)
   },
+  ListId: (request, response) => {
+    const { id } = request.query;
+
+    if (!id) {
+      return response.status(400).json({ "erro": "O ID do cliente não foi informado" })
+    }
+
+    const listedCustomer = ListCustomerService.listId(id);
+    return response.json(listedCustomer)
+  },
   ListName: (request, response) => {
     const { name } = request.query;
 
