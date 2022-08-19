@@ -31,7 +31,7 @@ const customerController = {
   create: (request, response) => {
     const {
       name
-    } = request.body;
+    } = request.query;
 
     const createdCustomer = CreateCustomerService.create(name);
     return response.json(createdCustomer)
@@ -40,7 +40,7 @@ const customerController = {
     const { id } = request.params
     const {
       name
-    } = request.body;
+    } = request.query;
 
     const updatedCustomer = UpdateCustomerService.update(
       id,

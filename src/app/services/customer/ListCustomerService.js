@@ -1,13 +1,9 @@
 const CustomerModel = require("../../models/customer/CustomerModel");
+const CreateCustomerService = require("../../services/customer/CreateCustomerService");
 
 const ListCustomerService = {
     listAll: () => {
-        const customer = new CustomerModel(
-            123,
-            "João"
-        )
-
-        return [customer];
+        return arrCustomers;
     },
     listId: (id) => {
         const allCustomers = ListCustomerService.listAll();
