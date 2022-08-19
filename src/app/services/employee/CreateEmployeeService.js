@@ -1,8 +1,8 @@
-const EmployeeModel = require("../../models/employee/EmployeeModel");
 const { v4 } = require("uuid");
+const EmployeeModel = require("../../models/employee/EmployeeModel");
 
 const CreateEmployeeService = {
-    createEmployee: (
+    create: (
         id,
         name,
         email,
@@ -16,7 +16,10 @@ const CreateEmployeeService = {
             password
         );
 
-        return newEmployee;
+        return {
+            success: true,
+            message: newEmployee
+        };
     }
 }
 
