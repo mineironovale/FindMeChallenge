@@ -1,6 +1,6 @@
 const yup = require('yup');
 
-async function customerValidator(request, response, next) {
+async function employeeValidator(request, response, next) {
 
     const schema = yup.object().shape({ 
       name: yup.string().strict().required('Nome é obrigatório').typeError('Deve ser uma string'),
@@ -16,4 +16,4 @@ async function customerValidator(request, response, next) {
     next()
   }  
 
-module.exports = customerValidator;
+module.exports = employeeValidator;
