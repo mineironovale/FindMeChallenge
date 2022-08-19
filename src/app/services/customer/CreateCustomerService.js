@@ -2,7 +2,7 @@ const CustomerModel = require("../../models/customer/CustomerModel");
 const { v4 } = require("uuid");
 
 const CreateCustomerService = {
-    createCustomer: (
+    create: (
         id,
         name
     ) => {

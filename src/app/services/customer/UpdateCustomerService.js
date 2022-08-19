@@ -1,4 +1,4 @@
-const ListCustomerService = require("../../services/customer/ListCustomerService");
+const ListCustomerService = require("./ListCustomerService");
 
 const UpdateCustomerService = {
     update: (
