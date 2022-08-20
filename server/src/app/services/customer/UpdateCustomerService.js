@@ -1,4 +1,4 @@
-const ListCustomerService = require("./ListCustomerService");
+import ListCustomerService from "./ListCustomerService";
 
 const UpdateCustomerService = {
     update: (
@@ -23,4 +23,4 @@ const UpdateCustomerService = {
       }
 };
 
-module.exports = UpdateCustomerService;
+export default UpdateCustomerService;

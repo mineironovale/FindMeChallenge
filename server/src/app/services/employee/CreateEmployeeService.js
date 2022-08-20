@@ -1,5 +1,5 @@
-const { v4 } = require("uuid");
-const EmployeeModel = require("../../models/employee/EmployeeModel");
+import { v4 } from "uuid";
+import EmployeeModel from "../../models/employee/EmployeeModel";
 
 const CreateEmployeeService = {
     create: (
@@ -23,4 +23,4 @@ const CreateEmployeeService = {
     }
 }
 
-module.exports = CreateEmployeeService;
+export default CreateEmployeeService;

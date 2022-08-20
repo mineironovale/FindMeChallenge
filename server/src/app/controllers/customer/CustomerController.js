@@ -1,7 +1,7 @@
-const CreateCustomerService = require('../../services/customer/CreateCustomerService');
-const ListCustomerService = require('../../services/customer/ListCustomerService');
-const UpdateCustomerService = require('../../services/customer/UpdateCustomerService');
-const DeleteCustomerService = require('../../services/customer/DeleteCustomerService');
+import CreateCustomerService from '../../services/customer/CreateCustomerService';
+import ListCustomerService from '../../services/customer/ListCustomerService';
+import UpdateCustomerService from '../../services/customer/UpdateCustomerService';
+import DeleteCustomerService from '../../services/customer/DeleteCustomerService';
 
 const customerController = {
   index: (request, response) => {
@@ -56,4 +56,4 @@ const customerController = {
   }
 }
 
-module.exports = customerController;
+export default customerController;

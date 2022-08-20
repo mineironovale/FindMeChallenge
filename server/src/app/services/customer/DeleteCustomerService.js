@@ -1,4 +1,4 @@
-const ListCustomerService = require("../../services/customer/ListCustomerService");
+import ListCustomerService from "../../services/customer/ListCustomerService";
 
 const DeleteCustomerService = {
     delete: (id) => {
@@ -14,4 +14,4 @@ const DeleteCustomerService = {
     }
 }
 
-module.exports = DeleteCustomerService;
+export default DeleteCustomerService;

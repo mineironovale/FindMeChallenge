@@ -1,4 +1,4 @@
-const EmployeeModel = require("../../models/employee/EmployeeModel");
+import EmployeeModel from "../../models/employee/EmployeeModel";
 
 const ListEmployeeService = {
     listAll: () => {
@@ -28,4 +28,4 @@ const ListEmployeeService = {
     }
 };
 
-module.exports = ListEmployeeService;
+export default ListEmployeeService;

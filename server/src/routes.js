@@ -1,11 +1,11 @@
-const Router = require("express");
+import Router from "express";
 const routes = new Router();
 
 const customerController = require("./app/controllers/customer/CustomerController");
 const employeeController = require("./app/controllers/employee/EmployeeController");
 
-const customerValidator = require("./middlewares/customer/CustomerValidator");
-const employeeValidator = require("./middlewares/employee/EmployeeValidator");
+// const customerValidator = require("./middlewares/customer/CustomerValidator");
+// const employeeValidator = require("./middlewares/employee/EmployeeValidator");
 
 routes.get("/customer", customerController.index);
 routes.get("/customer", customerController.ListId);
@@ -22,4 +22,4 @@ routes.post("/employee", employeeController.create);
 routes.put("/employee", employeeController.update);
 routes.delete("/employee", employeeController.delete);
 
-module.exports = routes;
+export default routes;

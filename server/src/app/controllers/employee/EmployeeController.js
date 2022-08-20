@@ -1,7 +1,7 @@
-const CreateEmployeeService = require('../../services/employee/CreateEmployeeService');
-const ListEmployeeService = require('../../services/employee/ListEmployeeService');
-const UpdateEmployeeService = require('../../services/employee/UpdateEmployeeService');
-const DeleteEmployeeService = require('../../services/employee/DeleteEmployeeService');
+import CreateEmployeeService from '../../services/employee/CreateEmployeeService';
+import ListEmployeeService from '../../services/employee/ListEmployeeService';
+import UpdateEmployeeService from '../../services/employee/UpdateEmployeeService';
+import DeleteEmployeeService from '../../services/employee/DeleteEmployeeService';
 
 const employeeController = {
   index: (request, response) => {
@@ -112,4 +112,4 @@ const employeeController = {
   }
 }
 
-module.exports = employeeController;
+export default employeeController;

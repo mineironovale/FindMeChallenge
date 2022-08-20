@@ -1,5 +1,5 @@
-const CustomerModel = require("../../models/customer/CustomerModel");
-const CreateCustomerService = require("../../services/customer/CreateCustomerService");
+import CustomerModel from "../../models/customer/CustomerModel";
+import CreateCustomerService from "../../services/customer/CreateCustomerService";
 
 const ListCustomerService = {
     listAll: () => {
@@ -17,4 +17,4 @@ const ListCustomerService = {
     }
 };
 
-module.exports = ListCustomerService;
+export default ListCustomerService;

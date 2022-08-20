@@ -1,4 +1,4 @@
-const ListEmployeeService = require("./ListEmployeeService");
+import ListEmployeeService from "./ListEmployeeService";
 
 const UpdateEmployeeService = {
     update: (
@@ -29,4 +29,4 @@ const UpdateEmployeeService = {
       }
 };
 
-module.exports = UpdateEmployeeService;
+export default UpdateEmployeeService;
