@@ -1,17 +1,29 @@
 import "./App.css";
 import { useState } from "react";
+import Axios from "axios";
 
 function App() {
   const [customerName, setCustomerName] = useState("");
-
   const [employeeName, setEmployeeName] = useState("");
   const [employeeEmail, setEmployeeEmail] = useState("");
   const [employeePassword, setEmployeePassword] = useState("");
-
   const [orderDate, setOrderDate] = useState("");
-  const [orderCustomerId, setOrderCustomerId] = useState("");
+  const [orderCustomerId, setOrderCustomerId] = useState(0);
   const [orderDescription, setOrderDescription] = useState("");
-  const [orderEmployeeId, setOrderEmployeeId] = useState("");
+  const [orderEmployeeId, setOrderEmployeeId] = useState(0);
+
+  const [newCustomerName, setNewCustomerName] = useState([]);
+  const [newEmployeeName, setnewEmployeeName] = useState([]);
+  const [newEmployeeEmail, setnewEmployeeEmail] = useState([]);
+  const [newEmployeePassword, setnewEmployeePassword] = useState([]);
+  const [newOrderDate, setnewOrderDate] = useState([]);
+  const [newOrderCustomerId, setnewOrderCustomerId] = useState(0);
+  const [newOrderDescription, setNewOrderDescription] = useState([]);
+  const [newOrderEmployeeId, setNewOrderEmployeeId] = useState(0);
+  
+  const [customerList, setCustomerList] = useState([]);
+  const [employeeList, setEmployeeList] = useState([]);
+  const [orderList, setOrderList] = useState([]);
 
   return (
     <div className="App">

@@ -18,7 +18,7 @@ routes.get("/employee", employeeController.index);
 routes.get("/employee", employeeController.ListId);
 routes.get("/employee", employeeController.ListName);
 routes.get("/employee", employeeController.ListEmail);
-routes.post("/employee", employeeController.create);
+routes.post("/employee/create", employeeController.create);
 routes.put("/employee", employeeController.update);
 routes.delete("/employee", employeeController.delete);
 
