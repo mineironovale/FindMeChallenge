@@ -1,7 +1,8 @@
 .App {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
 
 .App div {
@@ -9,7 +10,7 @@
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
 .App button {
@@ -28,3 +29,25 @@
   font-size: 20px;
   padding-left: 10px;
 }
+
+.menuItem {
+  width: 300px;
+  height: 50px;
+  background-color: rgb(234, 157, 15);
+  border-radius: 10px 20px;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  font-size: 40px;
+}
+
+h3 {
+  width: 300px;
+  height: 5px;
+  background-color: rgb(247, 224, 180);
+  border-radius: 10px 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  font-size: 20px;
+ }
