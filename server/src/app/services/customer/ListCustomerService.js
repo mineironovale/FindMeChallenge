@@ -9,11 +9,6 @@ const ListCustomerService = {
         const allCustomers = ListCustomerService.listAll();
         const customerRequired = allCustomers.find(item => item.id === id);
         return customerRequired;
-    },
-    listName: (name) => {
-        const allCustomers = ListCustomerService.listAll();
-        const customerRequired = allCustomers.find(item => item.name === name);
-        return customerRequired;
     }
 };
 

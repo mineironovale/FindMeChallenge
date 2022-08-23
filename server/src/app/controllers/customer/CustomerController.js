@@ -1,59 +1,75 @@
-import CreateCustomerService from '../../services/customer/CreateCustomerService';
-import ListCustomerService from '../../services/customer/ListCustomerService';
-import UpdateCustomerService from '../../services/customer/UpdateCustomerService';
-import DeleteCustomerService from '../../services/customer/DeleteCustomerService';
+import CreateCustomerService from "../../services/customer/CreateCustomerService";
+import ListCustomerService from "../../services/customer/ListCustomerService";
+import UpdateCustomerService from "../../services/customer/UpdateCustomerService";
+import DeleteCustomerService from "../../services/customer/DeleteCustomerService";
 
 const customerController = {
-  index: (request, response) => {
-    const listedCustomers = ListCustomerService.listAll()
-    response.json(listedCustomers)
+  readAll: (req, res) => {
+    db.query("SELECT * FROM customers", (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
   },
-  ListId: (request, response) => {
-    const { id } = request.query;
 
-    if (!id) {
-      return response.status(400).json({ "erro": "O ID do cliente não foi informado" })
-    }
+  readId: (req, res) => {
+    const id = req.params.id;
 
-    const listedCustomer = ListCustomerService.listId(id);
-    return response.json(listedCustomer)
+    db.query("SELECT * FROM customers WHERE id = ?", id, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
   },
-  ListName: (request, response) => {
-    const { name } = request.query;
 
-    if (!name) {
-      return response.status(400).json({ "erro": "O nome do cliente não foi informado" })
-    }
+  create: (req, res) => {
+    const name = req.body.name;
 
-    const listedCustomer = ListCustomerService.listName(name);
-    return response.json(listedCustomer)
+    db.query(
+      "INSERT INTO customers (name) VALUES (?)",
+      [name, age, country, position, wage],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send("create successful");
+        }
+      }
+    );
   },
-  create: (request, response) => {
-    const {
-      name
-    } = request.query;
 
-    const createdCustomer = CreateCustomerService.create(name);
-    return response.json(createdCustomer)
+  update: (req, res) => {
+    const id = req.body.id;
+    const name = req.body.name;
+
+    db.query(
+      "UPDATE customers SET name = ? WHERE id = ?",
+      [name, id],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(result);
+        }
+      }
+    );
   },
-  update: (request, response) => {
-    const { id } = request.params
-    const {
-      name
-    } = request.query;
 
-    const updatedCustomer = UpdateCustomerService.update(
-      id,
-      name
-    )
-
-    response.json(updatedCustomer)
+  delete: (req, res) => {
+    const id = req.params.id;
+    
+    db.query("DELETE FROM customers WHERE id = ?", id, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
   },
-  delete: (request, response) => {
-    const { id } = request.params
-    const deletedCustomer = DeleteCustomerService.delete(id)
-    response.send(deletedCustomer)
-  }
-}
+};
 
 export default customerController;

@@ -1,13 +1,5 @@
 import express from "express";
 import routes from "./routes";
-import mysql from "mysql";
-
-const db = mysql.createConnection({
-  user: "root",
-  host: "localhost",
-  password: "",
-  database: "FindMeChallenge"
-})
 
 class App {
   constructor() {

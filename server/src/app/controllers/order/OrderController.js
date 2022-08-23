@@ -18,36 +18,6 @@ const orderController = {
     const listedOrder = ListOrderService.listId(id);
     return response.json(listedOrder);
   },
-  ListDate: (request, response) => {
-    const { date } = request.query;
-
-    if (!date) {
-      return response.status(400).json({ "erro": "A data da ordem de serviço não foi informada" })
-    }
-
-    const listedOrder = ListOrderService.listDate(date);
-    return response.json(listedOrder)
-  },
-  ListCustomerId: (request, response) => {
-    const { customerId } = request.query;
-
-    if (!customerId) {
-      return response.status(400).json({ "erro": "O ID do cliente não foi informado" })
-    }
-
-    const listedOrder = ListOrderService.listCustomerId(customerId);
-    return response.json(listedOrder);
-  },
-  ListEmployeeId: (request, response) => {
-    const { employeeId } = request.query;
-
-    if (!employeeId) {
-      return response.status(400).json({ "erro": "O ID do colaborador não foi informado" })
-    }
-
-    const listedOrder = ListOrderService.listEmployeeId(employeeId);
-    return response.json(listedOrder);
-  },
   create: (request, response) => {
     const {
         date,

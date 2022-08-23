@@ -18,26 +18,6 @@ const employeeController = {
     const listedEmployee = ListEmployeeService.listId(id);
     return response.json(listedEmployee)
   },
-  ListName: (request, response) => {
-    const { name } = request.query;
-
-    if (!name) {
-      return response.status(400).json({ "erro": "O nome do cliente não foi informado" })
-    }
-
-    const listedEmployee = ListEmployeeService.listName(name);
-    return response.json(listedEmployee)
-  },
-  ListEmail: (request, response) => {
-    const { email } = request.query;
-
-    if (!email) {
-      return response.status(400).json({ "erro": "O email do cliente não foi informado" })
-    }
-
-    const listedEmployee = ListEmployeeService.listEmail(email);
-    return response.json(listedEmployee)
-  },
   create: (request, response) => {
     const {
       name,
